@@ -1,0 +1,19 @@
+body{
+    background-color:black;
+    color: aliceblue;
+}
+
+img{
+    border: 5px solid white;
+    width: 100%;
+}
+div{
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}
+
+h1{
+    text-transform: capitalize;
+    font-family: 'Libre Baskerville', serif;
+}
