@@ -71,10 +71,4 @@ class Calculator {
     }
   }
 }
-
-const calculator = new Calculator();
-calculator.calculate('10 + 2 * (6 - 1) / 2 + 7');
-console.log(calculator.getResult()); // Output: 17
-
-
 module.exports = Calculator;
