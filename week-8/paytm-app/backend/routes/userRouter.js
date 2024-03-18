@@ -1,9 +1,9 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
-const { Users } = require("mongoose");
+const { User } = require("../db");
 const { userSchema, updateSchema, signinSchema } = require("../zodSchemas");
 const { JWT_SECRET } = require("../config");
-const { authMiddleware } = require("./middleware");
+const authMiddleware = require("./middleware");
 const { Account } = require("../db");
 const router = express.Router();
 
@@ -15,7 +15,7 @@ router.get("./signup", async (req, res, next) => {
       msg: " Email areasy exists/ Invalid inputs",
     });
   }
-  const user = Users.findOne({
+  const user = User.findOne({
     username: body.username,
   });
   if (user) {
@@ -111,4 +111,4 @@ router.put("/", authMiddleware, async (req, res, next) => {
     message: "Updated successfully",
   });
 });
-module.exports = { router };
+module.exports = router;
